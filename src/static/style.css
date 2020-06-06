@@ -220,6 +220,10 @@ body .container .url-list li a {
 }
 body .container .url-list li .short {
   width: 20%;
+  max-width: 20%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 body .container .url-list li .orig {
   width: 80%;

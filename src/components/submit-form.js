@@ -19,7 +19,12 @@ class SubmitForm extends Component {
             short_name: this.state.sname
         })
         .then((data) => {
-            this.props.callback(data.data);
+            this.setState({
+                url: '',
+                sname: ''
+            }, () => {
+                this.props.callback(data.data);
+            })
         })
         .catch(err => {
             // console.log(err.response.data);
