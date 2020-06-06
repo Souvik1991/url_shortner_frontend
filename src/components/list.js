@@ -1,16 +1,19 @@
 import React from 'react';
-import Link from 'react-dom';
+import { config } from './constant'; 
 
 function List(props) {
+    var data = props.data;
+
     return (
         <li>
             <div className="flex-container">
-                <div className="flexbox">
-                    <Link to={props.data.short_url} target="_blank" rel="nopener norefferer">{props.data.short_url}</Link>
+                <div className="flexbox short">
+                    <a href={`${config.SERVER}/${data.short_name}/`} target="_blank" rel="noopener noreferrer">{data.short_name}</a>
                 </div>
                 <div className="flexbox orig">
-                    <Link to={props.data.original_link} target="_blank" rel="nopener norefferer">{props.data.original_link}</Link>
+                    <a href={data.original_url} target="_blank" rel="noopener noreferrer">{data.original_url}</a>
                 </div>
+                <div className="flexbox num">{data.clicked}</div>
             </div>
         </li>
     );
